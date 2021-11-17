@@ -25,18 +25,27 @@
 --whitespace: .5rem;
 
 /* baggrund ("baggrund med blød tekstur") */
---baggrund: url('../css/images/baggrund.png')
---baggrund: url('../css/images/baggrund.png');
+--baggrund: url('..images/baggrund.png');
+
 }
 
-/* deinition til iphone x*/
-@media only screen and (max-width: 600px) {
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
 
+/* Wrap */
+#wrap {
+  min-height: 100vh;
+  margin: auto;
+}
 
+/*baggrund */
 body {
-  font-family: "franklin-gothic-urw";
-  background-color: #ece2d7;
-  color: black;
+  background-image: var(--baggrund);
+  background-size:100% auto;
+  background-color: var(--white);
+  font-family: var(--font);
 }
 
 /* overskrifter og underoverskrifterr*/
@@ -55,6 +64,93 @@ h2 {
   margin-top: var(--whitespace);
   margin-bottom: var(--whitespace);
 
+}
+
+/* navigationsbar */
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--offwhite);
+  color: black;
+}
+
+.navbar img{
+  margin: 1.5rem;
+  margin-left: 10%;
+
+}
+
+.navbar-links ul{
+  margin: 0;
+  padding-top: 10px;
+  margin-right: 130px;
+  display: flex;
+  font-family: var(--brødtekst);
+  font-size: 30px;
+}
+
+.navbar-links li{
+  list-style: none;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+.navbar-links li a{
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  margin-right: 70px;
+  display: block;
+
+}
+
+/* navbar hoveer effekt*/
+.navbar-links li:hover {
+  background-color: white;
+}
+
+
+/* deinition til iphone x*/
+@media only screen and (max-width: 600px) {
+
+
+body {
+  font-family: "franklin-gothic-urw";
+  background-color: #ece2d7;
+  color: black;
+}
+
+/* navbar burgermenu ved lille skærm */
+ .burgermenu{
+   position: absolute;
+   top: 1.5rem;
+   right: 1.5rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+
+ .burgermenu .bar{
+   height: 3px;
+   width: 100%;
+   background-color: var(--black);
+   border-radius: 10px;
+ }
+
+ .navbar-links{
+   display: none;
+ }
+
+ .navbar{
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+.navbar img{
+ display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
 }
 
 /* flexbox til behandlinger mobil  */
@@ -77,40 +173,57 @@ h2 {
 .center {
   display: inline-flex;
   width: 100%;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
   /* container til billede og tekst */
 .container {
   position: relative;
+  width: 100%;
 
 }
 
   /* tekst til over billederne*/
 .text-block {
-    position: absolute;
-    bottom: 100px;
-    right: 70px;
+    position: relative;
+    text-align: center;
+    display: block;
+    bottom: 200px;
     background-color: #7c8f67;
     border-radius: 20px;
     color: white;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 30px;
   }
 
 /* sociale medie ikoner til footer*/
 .ikoner {
 display: flex;
+max-width: 200px;
+max-height: 100px;
 padding-top: 10px;
-padding-bottom: -40px;
 }
 
 /* fjern web footer*/
 .row{
   display: none;
 }
+.artikler{
+  display: none;
+}
 
+.artikler2{
+  display: none;
+}
+
+.artikler3{
+  display: none;
+}
+
+.ikonerweb{
+  display: none;
+}
 
 .footer{
   background-color: #f8f4f1;
@@ -125,6 +238,22 @@ padding-bottom: -40px;
 /* Small devices (portrait tablets and large phones, 600px and up) - til mobil på siden*/
 @media only screen and (min-width: 600px) {
 
+  /* navbar burgermenu */
+    .burgermenu{
+      display:none;
+    }
+
+  /* navigationsbar */
+  .navbar{
+    display: flex;
+    background-color: var(--offwhite);
+    color: black;
+}
+
+.forsidebillede{
+  max-width:360px;
+  max-height: 400px;
+}
   /* flexbox til behandlinger mobil  */
   .butikflex{
     display: inline;
@@ -156,15 +285,16 @@ padding-bottom: -40px;
 
     /* tekst til over billederne*/
   .text-block {
-      position: absolute;
-      bottom: 100px;
-      right: 70px;
-      background-color: #7c8f67;
-      border-radius: 20px;
-      color: white;
-      padding-left: 30px;
-      padding-right: 30px;
-      font-size: 20px;
+    position: relative;
+    text-align: center;
+    display: block;
+    bottom: 300px;
+    background-color: #7c8f67;
+    border-radius: 20px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 50px;
     }
 
   /* sociale medie ikoner til footer*/
@@ -174,6 +304,18 @@ padding-bottom: -40px;
 
   /* fjern web footer*/
   .row{
+    display: none;
+  }
+
+  .artikler{
+    display: none;
+  }
+
+  .artikler2{
+    display: none;
+  }
+
+  .artikler3{
     display: none;
   }
 
@@ -190,7 +332,7 @@ padding-bottom: -40px;
   }
   }
 
-  /* Medium devices (landscape tablets, 768px and up) */
+  /* Medium devices (tablets og computer devices) */
   @media only screen and (min-width: 900px) {
 
 
@@ -202,63 +344,110 @@ padding-bottom: -40px;
       margin-top: var(--whitespace);
       margin-bottom: var(--whitespace);
     }
-      /* flexe bokse til behandlinger på computer  */
-    .butikflex{
+
+    /* navbar burgermenu */
+   .burgermenu{
+     display:none;
+   }
+
+ /* navigationsbar */
+ .navbar{
+   display: flex;
+   background-color: var(--offwhite);
+   color: black;
+ }
+
+ .navbar img{
+   margin: 1.5rem;
+   margin-left: 10%;
+
+ }
+
+ .navbar-links ul{
+   margin: 0;
+   padding-top: 17px;
+   display: flex;
+   font-family: var(--brødtekst);
+   font-size: 20px;
+
+ }
+
+ .navbar-links li{
+   list-style: none;
+   padding-right: 20px;
+   padding-bottom: 10px;
+
+ }
+
+ .navbar-links li a{
+   text-decoration: none;
+   color: black;
+   padding: 1rem;
+   margin-right: 15px;
+   display: block;
+
+ }
+
+/*fjern kolonner til mobil version*/
+.butikflex{
+  display: none;
+}
+
+/*kolonnner til web version*/
+  .artikler{
       display: flex;
-      justify-content: center;
-        background-color: #ece2d7;
-        font-family: "franklin-gothic-urw";
-    }
-
-    .flexbox-container {
-      display: flex;
-    }
-
-    .flexbox-item-2 {
-      min-width: : 760px;
-    }
-
-      /* center til at bestemme billedernes position ved mobil device*/
-    .center {
-      display: block;
       width: 100%;
-      padding-top: 40px;
     }
 
-    .container {
-      position: relative;
+  .artikler2{
+      display: flex;
+      width: 100%;
+      background-color: #dcc6ec;
+      float: right;
+
+    }
+
+    .column left {
+      float: lef;
+      width: 50%;
+
+    }
+
+    .column right{
+      display: center;
+      width: 50%;
 
     }
 
       /* text-block til tekst over billederne*/
     .text-block {
-        position: absolute;
-        bottom: 100px;
-        right: 70px;
+        position: relative;
+        text-align: center;
+        display: block;
+        bottom: 300px;
         background-color: #7c8f67;
         border-radius: 20px;
         color: white;
-        padding-left: 30px;
-        padding-right: 30px;
-        font-size: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 50px;
       }
 
   /* sociale medie ikoner til footer*/
 
-      .ikoner {
+      .ikonerweb {
       display: flex;
       padding-top: 10px;
-      padding-bottom: -40px;
       }
 
   /* kolonner til footer på computer */
       .row{
         display: flex;
-        width: 100%;
+        min-width: 100%;
+        text-align: center;
       }
       .column {
-        display: center;
-        width: 50%;
+      min-width:  width: 100%;
         background-color: #f8f4f1;
         font-family: franklin-gothic-urw;
         font-size: 20px;
@@ -272,3 +461,87 @@ padding-bottom: -40px;
         display: none;
   }
   }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+  /* navigationsbar */
+.navbar{
+  display: flex;
+  background-color: var(--offwhite);
+  color: black;
+}
+
+.navbar img{
+  margin: 1.5rem;
+  margin-left: 10%;
+
+}
+
+.navbar-links ul{
+  margin: 0;
+  padding-top: 17px;
+  display: flex;
+  font-family: var(--brødtekst);
+  font-size: 20px;
+
+}
+
+.navbar-links li{
+  list-style: none;
+  padding-right: 20px;
+  padding-bottom: 10px;
+
+}
+
+.navbar-links li a{
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  margin-right: 15px;
+  display: block;
+
+
+}
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+  /* navigationsbar */
+     .navbar{
+       display: flex;
+       background-color: var(--offwhite);
+       color: black;
+     }
+
+     .navbar img{
+       margin: 1.5rem;
+       margin-left: 10%;
+
+     }
+
+     .navbar-links ul{
+       margin: 0;
+       padding-top: 17px;
+       display: flex;
+       font-family: var(--brødtekst);
+       font-size: 20px;
+
+     }
+
+     .navbar-links li{
+       list-style: none;
+       padding-right: 50px;
+       padding-bottom: 10px;
+
+     }
+
+     .navbar-links li a{
+       text-decoration: none;
+       color: black;
+       padding: 1rem;
+       margin-right: 15px;
+       display: block;
+   }
+
+ }
