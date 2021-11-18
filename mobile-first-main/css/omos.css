@@ -1,0 +1,656 @@
+/**
+ * projekt: Mobile first
+ **/
+
+/* Adobe fonts */
+@import url("https://use.typekit.net/iet2zpy.css");
+/* font-family: 'rig-shaded-medium-face', sans-serif; font-weight: 500; font-style: normal; */
+@import url("https://use.typekit.net/iet2zpy.css");
+/* font-family: 'franklin-gothic-urw', sans-serif; font-weight: 300; font-style: normal; */
+
+/* Variabler*/
+:root {
+  /* farver */
+  --white: #fcfcfc;
+  --offwhite: #f8f4f1;
+  --beige: #ece2d7;
+  --green: #7c8f67;
+  --black: #1d0b09;
+
+  /* fonte */
+  --overskrift: 'rig-shaded-medium-face', sans-serif; /* overskrifter */
+  --brødtekst: 'franklin-gothic-urw', sans-serif; /* brødtekst */
+
+  /* whitespace */
+  --whitespace: .5rem;
+
+  /* teksturer ("fliselagte baggrunde") */
+   --baggrund: url('../images/baggrund.png');
+
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Wrap */
+#wrap {
+  min-height: 100vh;
+  margin: auto;
+}
+
+/*baggrund */
+body {
+  background-image: var(--baggrund);
+  background-size:100% auto;
+}
+
+/* Typography */
+h1 {
+  font-family: var(--overskrift);
+  color: var(--black);
+  margin-top: var(--whitespace);
+  margin-bottom: var(--whitespace);
+}
+
+p {
+  font-family: var(--brødtekst);
+  color: var(--black);
+  margin-top: var(--whitespace);
+  margin-bottom: var(--whitespace);
+}
+
+#copyright {
+  font-size: 15px;
+}
+
+.copyright {
+  background-color: var(--white);
+  padding: 0.1em;
+}
+
+.parkering {
+  padding-bottom: 10%;
+}
+
+.omos {
+  padding-top: 2em;
+}
+
+/* Billeder */
+img {
+  width: 100%;
+}
+
+/* FORSIDE - header */
+header {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* MOBIL */
+  background: var(--offwhite);
+  padding-bottom: 5%; /* MOBIL */
+}
+
+header img {
+  margin-bottom: 5%; /* MOBIL */
+}
+
+header .btn {
+  position: absolute;
+  top: 40%; /* MOBIL */
+  left: 50%; /* MOBIL */
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: var(--green);
+  color: var(--white);
+  font-family: var(--overskrift);
+  font-size: 18px; /* MOBIL */
+  padding: 12px 35px;
+  padding-top: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 60px;
+  text-align: center;
+}
+
+header h2 {
+  position: absolute;
+  top: 20%; /* MOBIL */
+  text-align: center;
+  font-family: var(--brødtekst);
+  color: var(--black);
+}
+
+/* FORSIDE - kategorier */
+#kategorier img {
+  padding-top: 25px;
+}
+
+#kategorier .btn1 {
+  width:50%;
+  margin-left:25%;
+  margin-right:25%;
+}
+
+
+/*her begynder mit css*/
+
+/*OM OS underside*/
+
+
+
+/* Extra small devices (phones, 600px and down) iphone */
+@media only screen and (max-width: 600px) {
+  /* Typography */
+  h1 {
+    font-size: 1.4em;
+    text-align: center;
+
+  }
+  p {
+    font-size: 1.4em;
+    text-align: center;
+    margin: 1.5em;
+  }
+
+/* opstilling af Susu og Katrins info på om os*/
+  .omosbilleder {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .omosp {
+    margin-bottom: 10%;
+    margin: 1.5em;
+  }
+
+  /* navbar burgermenu ved lille skærm */
+ .burgermenu{
+   position: absolute;
+   top: 1.5rem;
+   right: 1.5rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+
+ .burgermenu .bar{
+   height: 3px;
+   width: 100%;
+   background-color: var(--black);
+   border-radius: 10px;
+ }
+
+ .navbar-links{
+   display: none;
+ }
+
+ .navbar{
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+.navbar img{
+ display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+
+  /*footer*/
+/* sociale medie ikoner til footer*/
+.ikoner {
+display: flex;
+padding-top: 10px;
+}
+
+/* fjern web footer*/
+.row{
+  display: none;
+}
+
+
+.footer{
+  background-color: #f8f4f1;
+  font-family: franklin-gothic-urw;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  /* Typography */
+  h1 {
+    font-size: 1.4em;
+    text-align: center;
+
+  }
+  p {
+    font-size: 1.4em;
+    text-align: center;
+    margin: 1.5em;
+  }
+
+/* opstilling af Susu og Katrins info på om os*/
+  .omosbilleder {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .omosp {
+    margin-bottom: 10%;
+    margin: 1.5em;
+
+  }
+
+  /* navbar burgermenu */
+  .burgermenu{
+    display:none;
+  }
+
+/* navigationsbar */
+.navbar{
+  display: flex;
+  background-color: var(--offwhite);
+  color: black;
+}
+
+  /*footer*/
+  /* sociale medie ikoner til footer*/
+ .ikoner {
+ display: flex;
+ }
+
+ /* fjern web footer*/
+ .row{
+   display: none;
+ }
+
+.br{
+ margin: 0px;
+}
+
+ .footer{
+   background-color: #f8f4f1;
+   font-family: franklin-gothic-urw;
+   font-size: 20px;
+   text-align: center;
+   color: black;
+ }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  /* Typografi til om os */
+  h1 {
+    text-align: center;
+  }
+
+  .omosh1 {
+    text-align: inherit;
+    font-size: 1.8em;
+    margin-left: 2em;
+  }
+
+  .omosp {
+    text-align: inherit;
+    font-size: 1.2em;
+    margin-left: 2.1em;
+
+  }
+
+  .infop {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+/* opstilling af Susu og Katrins info på om os*/
+  .omosbilleder {
+    width: 400px;
+    display: inline;
+  }
+
+  .kasse {
+    background-color: var(--offwhite);
+    text-align: inherit;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    flex-direction: row-reverse;
+  }
+
+  section {
+    display: inline-flex;
+  }
+
+  .kassebillede {
+    margin: 10px;
+
+  }
+
+  /* navbar burgermenu */
+   .burgermenu{
+     display:none;
+   }
+
+ /* navigationsbar */
+ .navbar{
+   display: flex;
+   background-color: var(--offwhite);
+   color: black;
+ }
+
+ .navbar img{
+   margin: 1.5rem;
+   margin-left: 10%;
+
+ }
+
+ .navbar-links ul{
+   margin: 0;
+   padding-top: 17px;
+   display: flex;
+   font-family: var(--brødtekst);
+   font-size: 20px;
+
+ }
+
+ .navbar-links li{
+   list-style: none;
+   padding-right: 20px;
+   padding-bottom: 10px;
+
+ }
+
+ .navbar-links li a{
+   text-decoration: none;
+   color: black;
+   padding: 1rem;
+   margin-right: 15px;
+   display: block;
+
+
+ }
+
+  /*footer*/
+  /* sociale medie ikoner til footer*/
+
+     .ikoner {
+     display: flex;
+     padding-top: 10px;
+     }
+
+ /* kolonner til footer på computer */
+     .row{
+       display: flex;
+       width: 100%;
+     }
+     .column {
+       width: 50%;
+       background-color: #f8f4f1;
+       font-family: var(--brødtekst);
+       font-size: 20px;
+       text-align: center;
+       color: black;
+
+     }
+
+ /* fjern visning af den mobile footer*/
+     .footer{
+       display: none;
+ }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+  /* Typografi til om os */
+  h1 {
+    text-align: center;
+  }
+
+  .omosh1 {
+    text-align: inherit;
+    font-size: 2.2em;
+    margin-left: 3em;
+    margin-top: 2em;
+  }
+
+  .omosp {
+    text-align: inherit;
+    font-size: 1.8em;
+    margin-left: 4.2em;
+
+  }
+
+  .infop {
+    text-align: center;
+    font-size: 1.2em;
+    margin-left: 12em;
+    margin-right: 12em;
+  }
+
+/* opstilling af Susu og Katrins info på om os*/
+  .omosbilleder {
+    width: 450px;
+    display: inline;
+  }
+
+  .kasse {
+    background-color: var(--offwhite);
+    text-align: inherit;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    flex-direction: row-reverse;
+  }
+
+  section {
+    display: inline-flex;
+  }
+
+  .kassebillede {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 3em;
+  }
+
+
+    /* navigationsbar */
+    .navbar{
+      display: flex;
+      background-color: var(--offwhite);
+      color: black;
+    }
+
+    .navbar img{
+      margin: 1.5rem;
+      margin-left: 10%;
+
+    }
+
+    .navbar-links ul{
+      margin: 0;
+      padding-top: 17px;
+      display: flex;
+      font-family: var(--brødtekst);
+      font-size: 20px;
+
+    }
+
+    .navbar-links li{
+      list-style: none;
+      padding-right: 20px;
+      padding-bottom: 10px;
+
+    }
+
+    .navbar-links li a{
+      text-decoration: none;
+      color: black;
+      padding: 1rem;
+      margin-right: 15px;
+      display: block;
+
+
+    }
+  /*footer*/
+  /* sociale medie ikoner til footer*/
+
+     .ikoner {
+     display: flex;
+     padding-top: 10px;
+     }
+
+
+ /* kolonner til footer på computer */
+     .row{
+       display: flex;
+       width: 100%;
+     }
+     .column {
+       width: 50%;
+       background-color: #f8f4f1;
+       font-family: var(--brødtekst);
+       font-size: 20px;
+       text-align: center;
+       color: black;
+
+     }
+
+ /* fjern visning af den mobile footer*/
+     .footer{
+       display: none;
+ }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  /* Typografi til om os */
+  h1 {
+    text-align: center;
+  }
+
+  .omosh1 {
+    text-align: inherit;
+    font-size: 2em;
+  }
+
+  .omosp {
+    text-align: inherit;
+    font-size: 1.4em;
+
+  }
+
+  .infop {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+/* opstilling af Susu og Katrins info på om os*/
+  .omosbilleder {
+    width: 450px;
+    display: inline;
+  }
+
+  .kasse {
+    background-color: var(--offwhite);
+    text-align: inherit;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    flex-direction: row-reverse;
+  }
+
+  section {
+    display: inline-flex;
+  }
+
+  .kassebillede {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 3em;
+
+  }
+
+
+      /* navigationsbar */
+      .navbar{
+        display: flex;
+        background-color: var(--offwhite);
+        color: black;
+      }
+
+      .navbar img{
+        margin: 1.5rem;
+        margin-left: 10%;
+
+      }
+
+      .navbar-links ul{
+        margin: 0;
+        padding-top: 17px;
+        display: flex;
+        font-family: var(--brødtekst);
+        font-size: 20px;
+
+      }
+
+      .navbar-links li{
+        list-style: none;
+        padding-right: 50px;
+        padding-bottom: 10px;
+
+      }
+
+      .navbar-links li a{
+        text-decoration: none;
+        color: black;
+        padding: 1rem;
+        margin-right: 15px;
+        display: block;
+    }
+  /*footer*/
+  /* sociale medie ikoner til footer*/
+
+     .ikoner {
+     display: flex;
+     padding-top: 10px;
+     }
+
+
+ /* kolonner til footer på computer */
+     .row{
+       display: flex;
+       width: 100%;
+     }
+     .column {
+       width: 50%;
+       background-color: #f8f4f1;
+       font-family: var(--brødtekst);
+       font-size: 20px;
+       text-align: center;
+       color: black;
+       padding-bottom: 2em;
+
+     }
+
+ /* fjern visning af den mobile footer*/
+     .footer{
+       display: none;
+ }
+ }

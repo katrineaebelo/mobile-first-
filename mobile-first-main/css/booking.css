@@ -1,0 +1,574 @@
+/**
+ * projekt: Mobile first
+ **/
+
+ /* Adobe fonts */
+ @import url("https://use.typekit.net/iet2zpy.css");
+ /* font-family: 'rig-shaded-medium-face', sans-serif; font-weight: 500; font-style: normal; */
+ @import url("https://use.typekit.net/iet2zpy.css");
+ /* font-family: 'franklin-gothic-urw', sans-serif; font-weight: 300; font-style: normal; */
+
+ /* Variabler*/
+ :root {
+   /* farver */
+   --white: #fcfcfc;
+   --offwhite: #f8f4f1;
+   --beige: #ece2d7;
+   --green: #7c8f67;
+   --black: #1d0b09;
+
+   /* fonte */
+   --overskrift: 'rig-shaded-medium-face', sans-serif; /* overskrifter */
+   --brødtekst: 'franklin-gothic-urw', sans-serif; /* brødtekst */
+
+   /* whitespace */
+   --whitespace: .5rem;
+
+   /* teksturer ("fliselagte baggrunde") */
+   --baggrund: url('../images/baggrund.png');
+   --behandlinger: url('../images/behandlinger.png');
+   --academy: url('../images/academy.png');
+   --omos: url('../images/omos.png');
+ }
+
+ * {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+
+ /* Smooth scroll */
+ html {
+   scroll-behavior: smooth;
+ }
+
+ /* Wrap */
+ #wrap {
+   min-height: 100vh;
+   margin: auto;
+ }
+
+ /*baggrund */
+ body {
+   background-image: var(--baggrund);
+   background-size:100% auto;
+   background-color: var(--white);
+   font-family: var(--font);
+ }
+
+/* Typography */
+h1 {
+  font-family: var(--overskrift);
+  color: var(--black);
+  margin-top: var(--whitespace);
+  margin-bottom: var(--whitespace);
+}
+
+p {
+  font-family: var(--brødtekst);
+  color: var(--black);
+  margin-top: var(--whitespace);
+  margin-bottom: var(--whitespace);
+}
+
+/* Billeder */
+img {
+  width: 100%;
+}
+
+
+/* MENUBAR */
+#navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80px;
+    width: 100%;
+    background-color: var(--offwhite);
+    color: var(--black);
+}
+
+/* Dropdown Button - https://www.w3schools.com/howto/howto_css_dropdown.asp */
+.dropbtn {
+  color: var(--black);
+  background-color:var(--offwhite);
+  padding-bottom: 16px;
+  padding-top: 16px;
+  font-family: var(--brødtekst);
+  font-size: 130%;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--offwhite);
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: var(--black);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: var(--brødtekst);
+  font-size: 130%;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: var(--offwhite)
+}
+
+.dropbtn:hover {
+  color: var(--green);
+  cursor: pointer;
+}
+
+/* UNDERSIDE - Behandling */
+/* flexbox til behandlinger */
+.butikflex{
+  display: inline;
+    background-color: #ece2d7;
+    font-family: "franklin-gothic-urw";
+}
+
+.flexbox-container {
+  display: flex;
+}
+
+.flexbox-item-2 {
+  min-height: 200px;
+  max-width: 600px;
+}
+
+  /* center (class med billederne) til at bestemme billedernes position ved mobil device*/
+.center {
+  display: inline-flex;
+  width: 100%;
+  padding-top: 20px;
+}
+
+  /* container til billede og tekst */
+.container1 {
+  position: relative;
+  width: 100%;
+
+}
+
+  /* tekst til over billederne*/
+.text-block {
+    position: relative;
+    text-align: center;
+    display: block;
+    bottom: 200px;
+    background-color: #7c8f67;
+    border-radius: 20px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 30px;
+  }
+
+  .inspiration {
+    display: none;
+  }
+  */
+
+
+/* UNDERSIDE - Booking */
+/* billede i header */
+    #header-img{
+    margin-top: 0px;
+    margin-bottom: 30px;
+    }
+
+/* UNDERSIDE - Booking - Typografi */
+.bodytekst{
+  font-family: var(--overskrift);
+  color: var(--black);
+  text-align: center;
+  }
+
+.bodytekst h1{
+  font-size: 20px;
+  margin-bottom: 40px;
+  margin-left: 80px;
+}
+
+.bodytekst h2{
+  font-size: 16px;
+}
+
+/* UNDERSIDE - Booking - bokse med behandlinger */
+.container{
+  width: 85%;
+  height: 60px;
+  background-color: var(--offwhite);
+  margin-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+}
+
+.item p{
+  font-size: 17px;
+  float: left;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.footer{
+  background-color: #f8f4f1;
+  font-family: franklin-gothic-urw;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+}
+
+.row{
+  display: none;
+}
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  /* navbar burgermenu */
+    .burgermenu{
+      display:none;
+    }
+
+  /* navigationsbar */
+  .navbar{
+    display: flex;
+    background-color: var(--offwhite);
+    color: black;
+
+
+/* UNDERSIDE - Booking */
+/* billede i header */
+#header-img {
+margin-top: 0px;
+width: 100%;
+}
+
+/* UNDERSIDE - Booking - Typografi */
+.bodytekst{
+  font-family: var(--overskrift);
+  color: var(--black);
+  text-align: center;
+  }
+
+.bodytekst h1{
+  font-size: 40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bodytekst h2{
+  font-size: 25px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* UNDERSIDE - Booking - bokse med behandlinger */
+.container{
+  width: 70%;
+  height: 60px;
+  background-color: var(--offwhite);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  margin-bottom: 30px;
+  display: block;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+}
+
+.item p{
+  font-size: 17px;
+  float: left;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+
+  }
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  /* navbar burgermenu */
+    .burgermenu{
+      display:none;
+    }
+
+  /* navigationsbar */
+  .navbar{
+    display: flex;
+    background-color: var(--offwhite);
+    color: black;
+  }
+
+  .navbar img{
+    margin: 1.5rem;
+    margin-left: 10%;
+
+  }
+
+  .navbar-links ul{
+    margin: 0;
+    padding-top: 17px;
+    display: flex;
+    font-family: var(--brødtekst);
+    font-size: 20px;
+
+  }
+
+  .navbar-links li{
+    list-style: none;
+    padding-right: 20px;
+    padding-bottom: 10px;
+
+  }
+
+  .navbar-links li a{
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+    margin-right: 15px;
+    display: block;
+
+
+  }
+
+  /* UNDERSIDE - Booking */
+  /* billede i header */
+  #header-img{
+  margin-top: 0px;
+  width: 100%;
+  }
+
+  /* UNDERSIDE - Booking - Typografi */
+  .bodytekst{
+    font-family: var(--overskrift);
+    color: var(--black);
+    text-align: center;
+    }
+
+  .bodytekst h1{
+    font-size: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bodytekst h2{
+    font-size: 25px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* UNDERSIDE - Booking - bokse med behandlinger */
+  .container{
+    width: 70%;
+    height: 60px;
+    background-color: var(--offwhite);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+    margin-bottom: 30px;
+    display: block;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
+  }
+
+  .item p{
+    font-size: 17px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+
+  }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+  /* navigationsbar */
+  .navbar{
+    display: flex;
+    background-color: var(--offwhite);
+    color: black;
+  }
+
+  .navbar img{
+    margin: 1.5rem;
+    margin-left: 10%;
+
+  }
+
+  .navbar-links ul{
+    margin: 0;
+    padding-top: 17px;
+    display: flex;
+    font-family: var(--brødtekst);
+    font-size: 20px;
+
+  }
+
+  .navbar-links li{
+    list-style: none;
+    padding-right: 20px;
+    padding-bottom: 10px;
+
+  }
+
+  .navbar-links li a{
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+    margin-right: 15px;
+    display: block;
+
+
+  }
+
+  /* UNDERSIDE - Booking */
+  /* billede i header */
+  #header-img{
+  margin-top: 0px;
+  width: 100%;
+  }
+
+  /* UNDERSIDE - Booking - Typografi */
+  .bodytekst{
+    font-family: var(--overskrift);
+    color: var(--black);
+    text-align: center;
+    }
+
+  .bodytekst h1{
+    font-size: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bodytekst h2{
+    font-size: 25px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* UNDERSIDE - Booking - bokse med behandlinger */
+  .container{
+    width: 70%;
+    height: 60px;
+    background-color: var(--offwhite);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+    margin-bottom: 30px;
+    display: block;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
+  }
+
+  .item p{
+    font-size: 17px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+
+
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+
+
+    /* navigationsbar */
+    .navbar{
+      display: flex;
+      background-color: var(--offwhite);
+      color: black;
+    }
+
+    .navbar img{
+      margin: 1.5rem;
+      margin-left: 10%;
+
+    }
+
+    .navbar-links ul{
+      margin: 0;
+      padding-top: 17px;
+      display: flex;
+      font-family: var(--brødtekst);
+      font-size: 20px;
+
+    }
+
+    .navbar-links li{
+      list-style: none;
+      padding-right: 50px;
+      padding-bottom: 10px;
+
+    }
+
+    .navbar-links li a{
+      text-decoration: none;
+      color: black;
+      padding: 1rem;
+      margin-right: 15px;
+      display: block;
+  }
+
+    /* UNDERSIDE - Booking */
+    #header-img{
+    margin-top: 0px;
+    margin-bottom: 50px;
+    }
+}

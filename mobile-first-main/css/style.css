@@ -1,0 +1,756 @@
+/**
+ * projekt: Mobile first
+ **/
+
+/* Adobe fonts */
+@import url("https://use.typekit.net/iet2zpy.css");
+/* font-family: 'rig-shaded-medium-face', sans-serif; font-weight: 500; font-style: normal; */
+@import url("https://use.typekit.net/iet2zpy.css");
+/* font-family: 'franklin-gothic-urw', sans-serif; font-weight: 300; font-style: normal; */
+
+/* Variabler*/
+:root {
+  /* farver */
+  --white: #fcfcfc;
+  --offwhite: #f8f4f1;
+  --beige: #ece2d7;
+  --green: #7c8f67;
+  --black: #1d0b09;
+
+  /* fonte */
+  --overskrift: 'rig-shaded-medium-face', sans-serif; /* overskrifter */
+  --brødtekst: 'franklin-gothic-urw', sans-serif; /* brødtekst */
+
+  /* whitespace */
+  --whitespace: .5rem;
+
+  /* teksturer ("fliselagte baggrunde") */
+  --baggrund: url('../images/baggrund.png');
+  --behandlinger: url('../images/behandlinger.png');
+  --academy: url('../images/academy.png');
+  --omos: url('../images/omos.png');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Wrap */
+#wrap {
+  min-height: 100vh;
+  margin: auto;
+}
+
+/*baggrund */
+body {
+  background-image: var(--baggrund);
+  background-size:100% auto;
+  background-color: var(--white);
+  font-family: var(--font);
+}
+
+/* Typography */
+h1 {
+  font-family: var(--overskrift);
+  color: var(--black);
+  margin-top: var(--whitespace);
+  margin-bottom: var(--whitespace);
+
+}
+h2, h3 {
+  font-family: var(--overskrift);
+  color: var(--black);
+  margin-top: var(--whitespace);
+  margin-bottom: var(--whitespace);
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+}
+h4 {
+  font-family: var(--overskrift);
+  font-size: 90%;
+  color: var(--black);
+  margin-top: var(--whitespace);
+  margin-bottom: var(--whitespace);
+}
+p {
+  font-family: var(--brødtekst);
+  color: var(--black);
+  margin-top: var(--whitespace);
+  margin-bottom: var(--whitespace);
+}
+
+/* Billeder */
+img {
+  width: 100%;
+}
+
+/* MENUBAR */
+#navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80px;
+    width: 100%;
+    background-color: var(--offwhite);
+    color: var(--black);
+}
+
+/* Dropdown Button - https://www.w3schools.com/howto/howto_css_dropdown.asp */
+.dropbtn {
+  color: var(--black);
+  padding-bottom: 16px;
+  padding-top: 16px;
+  font-family: var(--brødtekst);
+  font-size: 130%;
+  text-decoration: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--offwhite);
+  min-width: 160px;
+  z-index: 1;
+  margin-top: 16px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: var(--black);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: var(--brødtekst);
+  font-size: 130%;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: var(--offwhite)
+}
+
+.dropbtn:hover {
+  color: var(--green);
+  cursor: pointer;
+}
+
+/* FORSIDE - header */
+.headerforside {
+  position: relative;
+  width: 100%;
+  background: var(--offwhite);
+  padding-bottom: 5%;
+}
+.headerforside img {
+  margin-bottom: 5%;
+}
+.headerforside .btn {
+  position: absolute;
+  top: 40%; /* MOBIL */
+  left: 50%; /* MOBIL */
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: var(--green);
+  color: var(--white);
+  font-family: var(--overskrift);
+  font-size: 18px; /* MOBIL */
+  padding: 12px 35px;
+  padding-top: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 60px;
+  text-align: center;
+}
+.headerforside h1 {
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+}
+.headerforside h2 {
+  position: absolute;
+  top: 15%; /* MOBIL */
+  font-family: var(--brødtekst);
+  color: var(--black);
+  padding-left: 60px;
+  padding-right: 60px;
+  text-align: center;
+}
+.headerforside p {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+
+/* FORSIDE - kategorier */
+#kategorier {
+  padding-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* NY Boks med tekst ovenpå billede */
+div.boks {
+  width: 90%;
+  height: 90%;
+  background: rgba(234, 230, 227, 0.65); /* offwhite baggrund med 65% opacity */
+  padding: 50px;
+  margin: 20px;
+}
+div.behandlinger {
+  background-image: var(--behandlinger);
+  background-size: cover;
+  background-repeat: no-repeat;
+/*  background-size:100% auto; */
+  height: 300px;
+  padding-top: 0.5%;
+  margin-top: 25px;
+}
+div.academy {
+  background-image: var(--academy);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  padding-top: 0.5%;
+  margin-top: 25px;
+}
+div.omos {
+  background-image: var(--omos);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  padding-top: 0.5%;
+  margin-top: 25px;
+}
+
+/* Solid divider: https://www.w3schools.com/howto/howto_css_dividers.asp */
+hr.solid {
+  border-top: 2px solid var(--black);
+}
+
+/* SHOP */
+.shop img {
+  padding-top: 25px;
+}
+/* shop tekst*/
+.shop h4 {
+  position: absolute;
+  top: 231%; /* MOBIL */
+  left: 37%; /* MOBIL */
+}
+.shop p {
+  position: absolute;
+  top: 235%; /* MOBIL */
+}
+/*shop knap*/
+.btn2 {
+  position: absolute;
+  top: 240%; /* MOBIL */
+  left: 50%; /* MOBIL */
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: var(--green);
+  color: var(--white);
+  font-family: var(--overskrift);
+  font-size: 18px; /* MOBIL */
+  padding: 12px 52px;
+  padding-top: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 60px;
+  text-align: center;
+}
+
+/* INSPIRATION */
+/* inspiration tekst */
+.inspiration h2 {
+  text-align: center;
+  margin-top: 25px;
+}
+.inspiration a {
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--brødtekst);
+  color: var(--black);
+  margin-top: var(--whitespace);
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+.inspiration a:hover, a:active {
+  color: var(--green);
+}
+/* inspiration galleri */
+.inspirationgalleri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.inspirationgalleri img{
+  width: 23%;
+}
+
+
+/* !! UNDERSIDE - BOOKING !! */
+/* billede i header */
+    #header-img{
+    margin-top: 0px;
+    margin-bottom: 30px;
+    }
+
+/* UNDERSIDE - Booking - Typografi */
+.bodytekst{
+  font-family: var(--overskrift);
+  color: var(--black);
+  text-align: center;
+  }
+
+.bodytekst h1{
+  font-size: 20px;
+  margin-bottom: 40px;
+  margin-left: 80px;
+}
+
+.bodytekst h2{
+  font-size: 16px;
+}
+
+/* UNDERSIDE - Booking - bokse med behandlinger */
+.container{
+  width: 85%;
+  height: 60px;
+  background-color: var(--offwhite);
+  margin-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+}
+
+.item p{
+  font-size: 17px;
+  float: left;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+/* FOOTER */
+#copyright {
+  font-size: 15px;
+  text-align: center;
+}
+
+.copyright {
+  background-color: var(--white);
+  padding: 1em;
+}
+
+/* footer link - book nu*/
+.footer a {
+  text-decoration: none;
+  color: var(--green);
+  font-family: var(--brødtekst);
+}
+.column a {
+  text-decoration: none;
+  color: var(--green);
+  font-family: var(--brødtekst);
+}
+.footer a:hover{
+  color: var(--black);
+}
+.column a:hover {
+  color: var(--black);
+}
+
+/* sociale medie ikoner til footer*/
+.ikoner {
+display: flex;
+padding-top: 10px;
+justify-content: center;
+margin-left: auto;
+margin-right: auto;
+background-color: var(--offwhite);
+}
+
+.footer{
+background-color: #f8f4f1;
+font-family: var(--brødtekst);
+font-size: 20px;
+text-align: center;
+color: black;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  /* Typography */
+  .headerforside h1 {
+    font-size: 1.4em;
+  }
+  .headerforside p {
+    font-size: 1.4em;
+  }
+  /* navbar burgermenu ved lille skærm */
+  .burgermenu{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .burgermenu .bar{
+    height: 3px;
+    width: 100%;
+    background-color: var(--black);
+    border-radius: 10px;
+  }
+
+  .dropdown{
+    display: none;
+  }
+
+  /* FORSIDE - header */
+  .headercom {
+    display: none;
+  }
+  .headerforside .btn {
+    top: 30%;
+    left: 50%;
+    font-size: 18px;
+  }
+  /* inspiration galleri */
+  .inspirationgalleri img{
+    width: 45%;
+  }
+  /* Shop */
+  .shopcom {
+    display: none;
+  }
+
+  /* !! UNDERSIDE - BOOKING !! */
+  /* billede i header */
+  #header-img {
+  margin-top: 0px;
+  width: 100%;
+  }
+
+  /* UNDERSIDE - Booking - Typografi */
+  .bodytekst h1{
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bodytekst h2{
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item p{
+    font-size: 17px;
+  }
+
+  /* UNDERSIDE BEHANDLINGER*/
+  /* text-block til tekst over billederne*/
+.text-block {
+    position: relative;
+    text-align: center;
+    display: block;
+    bottom: 300px;
+    background-color: #7c8f67;
+    border-radius: 20px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 30px;
+  }
+
+
+  /* FOOTER */
+  /* fjern web footer*/
+  .row{
+  display: none;
+  }
+
+  .behandlinger{
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  /* navbar burgermenu */
+    .burgermenu{
+      display:none;
+    }
+
+  /* FORSIDE - header */
+  .header {
+    display: none;
+  }
+  .headerforside .btn {
+    top: 35%;
+    font-size: 25px;
+  }
+  /* Shop */
+  .shopbillede {
+    display: none;
+  }
+
+  /* !! UNDERSIDE - BOOKING !! */
+  /* billede i header */
+  #header-img {
+  margin-top: 0px;
+  width: 100%;
+  }
+
+  /* UNDERSIDE - Booking - Typografi */
+  .bodytekst h1{
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bodytekst h2{
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item p{
+    font-size: 17px;
+  }
+
+/*tekst bokse til behandlinger*/
+  .text-block {
+      position: relative;
+      text-align: center;
+      bottom: 200px;
+      background-color: #7c8f67;
+      border-radius: 20px;
+      color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 30px;
+    }
+
+    .behandlinger {
+    display: none;
+    }
+
+  /* UNDERSIDE - Booking - bokse med behandlinger */
+  .container{
+    width: 70%;
+  }
+  /* FOOTER */
+ /* fjern web footer*/
+ .row{
+   display: none;
+ }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  /* navbar burgermenu */
+    .burgermenu{
+      display:none;
+    }
+
+  /* FORSIDE - header */
+  .header {
+    display: none;
+  }
+  /* Shop */
+  .shopbillede {
+    display: none;
+  }
+
+  /* UNDERSIDE - Booking - Typografi */
+  .bodytekst h1{
+    font-size: 28px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bodytekst h2{
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* UNDERSIDE - Booking - bokse med behandlinger */
+  .container{
+    width: 70%;
+  }
+
+
+
+  /* inspiration galleri */
+  .behandlinger {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .behandlingerweb img{
+    width: 45%;
+  }
+
+.butikflex{
+  display:none;
+}
+
+
+  .item p{
+    font-size: 18px;
+  }
+
+  .text-block {
+    display: none;
+  }
+
+  /* FOOTER */
+ /* kolonner til footer på computer */
+     .row{
+       display: flex;
+       width: 100%;
+     }
+     .column {
+       width: 50%;
+       background-color: #f8f4f1;
+       font-family: var(--brødtekst);
+       font-size: 15px;
+       text-align: center;
+       color: black;
+     }
+
+
+
+ /* fjern visning af den mobile footer*/
+     .footer{
+       display: none;
+     }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  /* navbar burgermenu */
+    .burgermenu{
+      display:none;
+    }
+
+  /* FORSIDE - header */
+  .header {
+    display: none;
+  }
+  /* Shop */
+  .shopbillede {
+    display: none;
+  }
+
+  /* UNDERSIDE - Booking - Typografi */
+  .bodytekst h1{
+    font-size: 37px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bodytekst h2{
+    font-size: 22px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* UNDERSIDE - Booking - bokse med behandlinger */
+  .container{
+    width: 70%;
+  }
+
+  .item p{
+    font-size: 18px;
+  }
+
+  /* FOOTER */
+ /* kolonner til footer på computer */
+     .row{
+       display: flex;
+       width: 100%;
+     }
+     .column {
+       width: 50%;
+       background-color: #f8f4f1;
+       font-family: var(--brødtekst);
+       font-size: 20px;
+       text-align: center;
+       color: black;
+     }
+
+ /* fjern visning af den mobile footer*/
+     .footer{
+       display: none;
+     }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  /* navbar burgermenu */
+    .burgermenu{
+      display:none;
+    }
+
+  /* FORSIDE - header */
+  .header {
+    display: none;
+  }
+  /* Shop */
+  .shopbillede {
+    display: none;
+  }
+  /* UNDERSIDE - Booking - bokse med behandlinger */
+  .container{
+    width: 65%;
+  }
+
+  /* inspiration galleri */
+  .behandlinger {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+}
